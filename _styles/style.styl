@@ -1,0 +1,168 @@
+//====================
+// import
+// ===================
+
+@import ("smart-grid.styl");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans');
+
+//====================
+// variables
+// ===================
+$drkBlue = #203748;
+$Red = #f04949;
+$button = #39d084;
+//====================
+// global
+// ===================
+body
+	background-image url("../_img/cork-wallet.png");
+
+a
+	text-decoration none;
+	color white
+
+li
+	list-style: none
+//====================
+// mixins
+// ===================
+font($size,$family,$weight,$color)
+	font-size $size
+	font-family $family
+	font-weight $weight
+	color: $color
+
+//====================
+// code
+// ===================
+.header
+	max-width: 800px;
+	background-color: $Red
+	min-height 80px;
+	row-flex();
+	col-12();
+	flex-grow: 0;
+	margin 0 auto !important
+	align-items: center;
+	img
+		border-radius: 50%;
+		// padding-left 20px;
+		margin-left 20px;
+		xs("margin-left", 5px)
+	.nav
+		col-10();
+		col-xs-9();
+		col-xxs-9();
+		xs("margin", 0)
+		display flex;
+		xxs("flex-wrap", wrap);
+		justify-content: space-around;
+		li
+			text-align: center;
+			sm("text-align", start)
+			i
+				font-size: 20px;
+				xs("display", none)
+			a
+				padding: 10px 20px;
+				text-transform: uppercase;
+				font(16px,PT Sans,400,#fff)
+				xxs("font-size", 12px)
+				sm("font-size", 14px)
+				transition: .3s;
+				border-radius: 20px;
+				&.active
+					background-color: $drkBlue
+				&:hover
+					background-color: $drkBlue
+
+//====================
+// main
+// ===================
+
+.about
+	
+	display flex
+	margin 0 auto !important;
+	col-12();
+	xs("flex-flow", column wrap)
+	max-width 800px
+	min-height 400px
+	background-color: $drkBlue
+	flex-grow 1
+	&__img
+		display flex
+		justify-content center
+		padding-top 50px;
+		col-3();
+		col-xs-8()
+		sm("margin", 20px)
+		xs("padding-left", 50px)
+		img
+			height: 120px;
+			width: 135px;
+			border-radius: 50%;
+	&__name
+		h3
+			font(26px,PT Sans,400,#2bce6c)
+		h4
+			font(20px,PT Sans,400,#fff)
+	&__info
+		font(18px,PT Sans,400,#fff)
+		line-height 1.5rem
+	&__button
+		margin 30px auto
+		width: 210px
+		height: 50px
+		background-color: $button
+		text-align center;
+		line-height 50px;
+		font(20px,PT Sans,400,#fff)
+		text-transform uppercase
+		border-radius: 305px;
+		cursor: pointer
+		transition: .3s;
+		xs("width", 120px)
+		xs("height", 40px)
+		xs("line-height", 40px)
+		xs("font-size", 14px)
+		&:hover
+			background-color: darken($button, 20%)
+
+.human
+	text-align center
+	col-9()
+	col-sm-10()
+	col-xs-11()
+	col-xxs-12()
+	xs("padding-top", 10px)
+	sm("margin-left", 20px)
+	padding-top 50px;
+	display flex;
+	flex-flow column wrap;
+
+//====================
+// footer
+// ===================
+
+.footer
+	col-12()
+	margin 0 auto
+	display flex
+	justify-content space-between
+	align-items center
+	flex-grow 0;
+	max-width 800px
+	min-height 50px
+	background-color: #355267;
+	&__site
+		padding-left 30px;
+		font(35px,PT Sans,400,#fff)
+	&__contact
+		padding-right: 30px;
+		font(18px,PT Sans,400,#fff)
+	&__site, &__contact
+		a
+			transition .3s;
+			&:hover
+				color: $button;
